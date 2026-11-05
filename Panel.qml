@@ -283,7 +283,7 @@ Panel {
       return root.showPercentage && !vertical ? icon + " " + root.lowest.level + "%" : icon
     }
     slotSize: Style.bar.iconSlot * (root.showPercentage && !vertical ? 2.4 : 1)
-    active: root.lowest !== null && !root.lowest.offline && !root.lowest.charging
+    active: !!root.lowest && !root.lowest.offline && !root.lowest.charging
       && root.lowest.level <= root.lowThreshold
     tooltipText: root.opened ? "" : root.summaryText
     onPressed: function(b) { root.toggle() }
